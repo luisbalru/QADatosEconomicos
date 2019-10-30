@@ -23,19 +23,17 @@ func TestNumYears(t *testing.T){
   var x uint = uint(HowManyYears())
   if x == 2{
     t.Log("El número de años es correcto")
-  }
-  else{
+  } else{
     t.Error("El número de años es incorrecto")
   }
 }
 
 func TestTodosDatos(t *testing.T){
   t.Log("Test todos")
-  statistics = Estadisticas()
-  if reflect.TypeOf(statistics).String() == "Datos"{
+  statistics := Estadisticas()
+  if reflect.TypeOf(statistics).String() == "estadisticas.Datos"{
     t.Log("El tipo de dato es correcto")
-  }
-  else{
-    t.Error("El tipo de dato es incorrecto")
+  } else{
+    t.Error("El tipo de dato no es correcto")
   }
 }

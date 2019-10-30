@@ -7,8 +7,8 @@ import (
 )
 
 type EstadisticaParo struct {
-    Year Integer `json:"year"`
-    NumParados Integer `json:"parados"`
+    Year uint `json:"year"`
+    NumParados uint `json:"parados"`
 }
 
 type Datos struct{
@@ -27,7 +27,7 @@ func incorporarEstadistica(){
 }
 
 func LeeDatos(nombre_archivo string){
-  archivo, e = ioutil.ReadFile(nombre_archivo)
+  archivo, e := ioutil.ReadFile(nombre_archivo)
   if e != nil{
     log.Fatal("No se puede leer el archivo de datos")
   }

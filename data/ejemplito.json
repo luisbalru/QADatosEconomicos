@@ -1,16 +1,16 @@
 {
   "paro" : [
-    { "year" : "2015",
-      "parados" : "2000000"
+    { "year" : 2015,
+      "parados" : 2000000
     },
-    { "year" : "2016",
-      "parados" : "3500000"
+    { "year" : 2016,
+      "parados" : 3500000
     },
-    { "year" : "2017",
-      "parados" : "3000000"
+    { "year" : 2017,
+      "parados" : 3000000
     },
-    { "year" : "2018",
-      "parados" : "2800000" 
+    { "year" : 2018,
+      "parados" : 2800000
     }
   ]
 }
