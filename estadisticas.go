@@ -37,6 +37,12 @@ func LeeDatos(nombre_archivo string){
   }
 
 
+}
 
+func Estadisticas() Datos{
+  return datos_estadisticos
+}
 
+func HowManyYears() uint{
+  return uint(len(datos_estadisticos.Estadisticas))
 }
