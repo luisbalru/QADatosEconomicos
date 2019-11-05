@@ -37,3 +37,14 @@ func TestTodosDatos(t *testing.T){
     t.Error("El tipo de dato no es correcto")
   }
 }
+
+func TestMedia(t *testing.T){
+  t.Log("Test Media")
+  m := Media()
+  if m != 2750000.0 || reflect.TypeOf(m).String() != "float64"{
+    t.Error("La función media no va o tipo de dato incorrecto")
+  } else{
+    t.Log("Media correcta")
+  }
+
+}
