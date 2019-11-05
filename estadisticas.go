@@ -1,14 +1,17 @@
 package estadisticas
 
+
+
 import (
           "encoding/json"
           "io/ioutil"
           "log"
+          "github.com/montanaflynn/stats"
 )
 
 type EstadisticaParo struct {
-    Year uint `json:"year"`
-    NumParados uint `json:"parados"`
+    Year int `json:"year"`
+    NumParados int `json:"parados"`
 }
 
 type Datos struct{
@@ -43,6 +46,12 @@ func Estadisticas() Datos{
   return datos_estadisticos
 }
 
-func HowManyYears() uint{
-  return uint(len(datos_estadisticos.Estadisticas))
+func Media() float64{
+  d := stats.LoadRawData([]int{2000000,3500000})
+  m,_ := stats.Mean(d)
+  return m
+}
+
+func HowManyYears() int{
+  return int(len(datos_estadisticos.Estadisticas))
 }
