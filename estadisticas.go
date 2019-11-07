@@ -5,8 +5,8 @@ package estadisticas
 import (
           "encoding/json"
           "io/ioutil"
-          "log"
           "github.com/montanaflynn/stats"
+          "fmt"
 )
 
 type EstadisticaParo struct {
@@ -27,13 +27,12 @@ const default_data_file_name = "./data/ejemplito.json"
 
 func LeeDatos(nombre_archivo string){
   archivo, e := ioutil.ReadFile(nombre_archivo)
-  var logFatalf = log.Fatalf
   if e != nil{
-    logFatalf("No se puede leer el archivo de datos")
+    fmt.Println("No se puede leer el archivo de datos")
   }
 
   if err := json.Unmarshal(archivo, &datos_estadisticos); err != nil{
-    logFatalf("Error en el JSON ", err)
+    fmt.Println("Error en el JSON ", err)
   }
 
 
