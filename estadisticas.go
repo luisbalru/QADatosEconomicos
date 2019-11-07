@@ -24,10 +24,6 @@ var(
 
 const default_data_file_name = "./data/ejemplito.json"
 
-func incorporarEstadistica(){
-  // Incorpora los datos del paro. El fichero debe estar en la carpeta data
-  LeeDatos(default_data_file_name)
-}
 
 func LeeDatos(nombre_archivo string){
   archivo, e := ioutil.ReadFile(nombre_archivo)
