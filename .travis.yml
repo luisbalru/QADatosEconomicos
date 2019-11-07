@@ -4,6 +4,5 @@ go:
   - 1.x
   - master
 
-before_install: 
-	- go get
+before_install: go get
 script: make test
