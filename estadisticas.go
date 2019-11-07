@@ -48,6 +48,12 @@ func Media() float64{
   return m
 }
 
+func Mediana() float64{
+  d := stats.LoadRawData([]int{2000000,10,3500000})
+  mediana, _ := stats.Median(d)
+  return mediana
+}
+
 
 func HowManyYears() int{
   return int(len(datos_estadisticos.Estadisticas))

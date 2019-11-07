@@ -4,6 +4,7 @@ import(
   "reflect"
   "testing"
   "os"
+  "fmt"
 )
 
 func TestMain(m *testing.M){
@@ -48,4 +49,15 @@ func TestMedia(t *testing.T){
     t.Log("Media correcta")
   }
 
+}
+
+func TestMediana(t *testing.T){
+  t.Log("Test Mediana")
+  m := Mediana()
+  fmt.Println(m)
+  if m != 2000000.0 || reflect.TypeOf(m).String() != "float64"{
+    t.Error("La función mediana no va o no es el tipo de dato correcto")
+  } else{
+    t.Log("Mediana correcta")
+  }
 }
