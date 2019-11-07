@@ -4,7 +4,6 @@ import(
   "reflect"
   "testing"
   "os"
-  "fmt"
 )
 
 func TestMain(m *testing.M){
@@ -54,10 +53,29 @@ func TestMedia(t *testing.T){
 func TestMediana(t *testing.T){
   t.Log("Test Mediana")
   m := Mediana()
-  fmt.Println(m)
   if m != 2000000.0 || reflect.TypeOf(m).String() != "float64"{
     t.Error("La función mediana no va o no es el tipo de dato correcto")
   } else{
     t.Log("Mediana correcta")
+  }
+}
+
+func TestMin(t *testing.T){
+  t.Log("Test Mínimo")
+  m := Minimo()
+  if m != 10.0 || reflect.TypeOf(m).String() != "float64"{
+    t.Error("La función mínimo no va o no es el tipo de dato correcto")
+  } else{
+    t.Log("mínimo correcto")
+  }
+}
+
+func TestMax(t *testing.T){
+  t.Log("Test Máximo")
+  m := Maximo()
+  if m != 3500000.0 || reflect.TypeOf(m).String() != "float64"{
+    t.Error("La función máximo no va o no es el tipo de dato correcto")
+  } else{
+    t.Log("Máximo correcto")
   }
 }

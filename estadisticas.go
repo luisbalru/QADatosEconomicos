@@ -54,6 +54,18 @@ func Mediana() float64{
   return mediana
 }
 
+func Minimo() float64{
+  d := stats.LoadRawData([]int{2000000,10,3500000})
+  min, _ := stats.Min(d)
+  return min
+}
+
+func Maximo() float64{
+  d := stats.LoadRawData([]int{2000000,10,3500000})
+  max, _ := stats.Max(d)
+  return max
+}
+
 
 func HowManyYears() int{
   return int(len(datos_estadisticos.Estadisticas))
