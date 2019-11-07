@@ -48,6 +48,7 @@ func Media() float64{
   return m
 }
 
+
 func HowManyYears() int{
   return int(len(datos_estadisticos.Estadisticas))
 }
