@@ -27,12 +27,13 @@ const default_data_file_name = "./data/ejemplito.json"
 
 func LeeDatos(nombre_archivo string){
   archivo, e := ioutil.ReadFile(nombre_archivo)
+  var logFatalf = log.Fatalf
   if e != nil{
-    log.Fatal("No se puede leer el archivo de datos")
+    logFatalf("No se puede leer el archivo de datos")
   }
 
   if err := json.Unmarshal(archivo, &datos_estadisticos); err != nil{
-    log.Fatal("Error en el JSON ", err)
+    logFatalf("Error en el JSON ", err)
   }
 
 

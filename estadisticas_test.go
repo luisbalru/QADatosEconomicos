@@ -49,3 +49,22 @@ func TestMedia(t *testing.T){
   }
 
 }
+
+func TestFatal(t *testing.T) {
+    origLogFatalf := logFatalf
+
+    // After this test, replace the original fatal function
+    defer func() { logFatalf = origLogFatalf } ()
+
+    errors := []string{}
+    logFatalf = func(format string, args ...interface{}) {
+        if len(args) > 0 {
+            errors = append(errors, fmt.Sprintf(format, args))
+        } else {
+            errors = append(errors, format)
+        }
+    }
+    if len(errors) != 1 {
+        t.Errorf("excepted one error, actual %v", len(errors))
+    }
+}
