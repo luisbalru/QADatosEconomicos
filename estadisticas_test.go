@@ -4,6 +4,7 @@ import(
   "reflect"
   "testing"
   "os"
+  "fmt"
 )
 
 func TestMain(m *testing.M){
@@ -11,6 +12,15 @@ func TestMain(m *testing.M){
   os.Exit(m.Run())
 }
 
+func TestImpresion(t *testing.T){
+  t.Log("Test de fmt println")
+  n, _ := fmt.Println("a")
+  if n < 0 || reflect.TypeOf(n).String() != "int"{
+    t.Error("Error en la impresión")
+  } else{
+    t.Log("Todo bien")
+  }
+}
 
 func TestYears(t *testing.T){
   t.Log("Test Year")
