@@ -1,0 +1,4 @@
+{
+	"lenguaje": "Go",
+	"build": "Makefile"
+}
